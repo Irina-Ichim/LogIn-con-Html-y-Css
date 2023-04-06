@@ -17,6 +17,7 @@ body{
     height:420px;
     background: #1c1c1c;
     border-radius: 8px;
+    overflow: hidden;
 }
 .box::before{
     content: '';
@@ -26,7 +27,63 @@ body{
     width:380px;
     height:420px;
     background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    animation: animate 6s linear infinite;
+    z-index: 1;
+    transform-origin: bottom right;
 
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width:380px;
+    height:420px;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    animation: animate 6s linear infinite;
+    z-index: 1;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+
+}
+.borderline{
+    position: absolute;
+    top:0;
+    inset: 0;
+}
+.borderline::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width:380px;
+    height:420px;
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+    animation: animate 6s linear infinite;
+    z-index: 1;
+    transform-origin: bottom right;
+    animation-delay: -1.5s;
+}
+.borderline::after{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width:380px;
+    height:420px;
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+    animation: animate 6s linear infinite;
+    z-index: 1;
+    transform-origin: bottom right;
+    animation-delay: -4.5s;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .box form{
     position:absolute;
